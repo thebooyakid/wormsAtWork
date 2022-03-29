@@ -1,21 +1,24 @@
 import React from 'react';
 import './App.css';
-import Button from './components/Button';
-import Error from './components/Error';
-import NavBar from './components/NavBar';
-import greenTheme from './themes/greenTheme'
-import { ThemeProvider } from '@mui/material/styles'
-
+import {NavBar} from './components/NavBar';
+import Homepage from './views/Homepage'
+import {Routes, Route} from 'react-router-dom';
+import ImageList from './components/ImageList'
+import PaintingInfo from './components/PaintingInfo'
 
 function App() {
   return (
-    <ThemeProvider theme={greenTheme}>
+    
       <NavBar>
-        <h1>Worms at Work</h1>
-        <Button variant="text">Clicketh</Button>
+        <Routes>
+          <Route path="/" element={<Homepage />}/>
+          <Route path="/images" element={<ImageList />}/>
+          <Route path="/painting/:paintingId" element={<PaintingInfo />}/>
+
+        </Routes>
       </NavBar>
-    </ThemeProvider>
+  
   );
-}
+};
 
 export default App;

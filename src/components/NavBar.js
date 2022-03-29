@@ -12,10 +12,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Products', 'Custom', 'About Worms'];
-const settings = ['Cart', 'Profile', 'Contact Us' 'Logout'];
+const pages = ['Products', 'Custom', 'About Worms']; //favorites
+const settings = ['Cart', 'Profile', 'Contact Us', 'Logout'];
 
-const ResponsiveAppBar = () => {
+export const NavBar = ({children}) => {
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,6 +36,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
+    <>
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -135,6 +137,8 @@ const ResponsiveAppBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    {children}
+    </>
   );
 };
-export default ResponsiveAppBar;
+// export default ResponsiveAppBar;
