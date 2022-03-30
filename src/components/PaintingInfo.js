@@ -12,7 +12,7 @@ import usePainting from '../hooks/usePainting';
 export default function PaintingInfo(){
     const {paintingId} = useParams();
     const {painting} = usePainting(paintingId);
-
+    console.log(painting?.favorite)
     return (
         <Box sx={{display: "flex", flexDirection: "column"}}>
             <Card sx={{display: "inline-flex", flexDirection:'column', alignSelf: "center", alignItems: 'center', maxWidth: 1000}} key={painting?.id}>

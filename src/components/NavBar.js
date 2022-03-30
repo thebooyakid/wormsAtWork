@@ -11,9 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 const pages = ['Products', 'Custom', 'About Worms']; //favorites
-const settings = ['Cart', 'Profile', 'Contact Us', 'Logout'];
+const settings = ['Profile', 'Logout']; // make logout only if logged in
 
 export const NavBar = ({children}) => {
 
@@ -107,8 +109,14 @@ export const NavBar = ({children}) => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ paddingRight: 5 }}>
+              hello username<PersonOutlineIcon fontSize='large'/>
+              </IconButton>
+            </Tooltip>
+          
+            <Tooltip title="Go to cart">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="R" />
+                <ShoppingCartCheckoutIcon fontSize='large'/> 
               </IconButton>
             </Tooltip>
             <Menu

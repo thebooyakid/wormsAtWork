@@ -4,7 +4,8 @@ import {NavBar} from './components/NavBar';
 import Homepage from './views/Homepage'
 import {Routes, Route} from 'react-router-dom';
 import ImageList from './components/ImageList'
-import PaintingInfo from './components/PaintingInfo'
+import PaintingInfo from './components/PaintingInfo';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/painting/:paintingId" element={<PaintingInfo />}/>
 
         </Routes>
+        <Footer/>
       </NavBar>
   
   );
